@@ -48,36 +48,45 @@
   </div>
     <form action="" class="hostel_filter_form">
       <div class="infastructura_filter">
-        <p>Инфраструктура:</p>
+        <p class="name_filter">Инфраструктура:</p>
         <div class="infastructura_checkbox">
-          <label><input type="checkbox" name="infastructura" id="bassein" checked> Бассейн</label>
-          <label><input type="checkbox" name="infastructura" id="parking " checked> Парковка</label>
-          <label><input type="checkbox" name="infastructura" id="wi-fi"> Wi-Fi</label>
+          <label class="control"><input type="checkbox" name="infastructura" id="bassein" class="visually-hidden control_input" checked><span class="control_mark"></span> Бассейн</label>
+          <label class="control"><input type="checkbox" name="infastructura" id="parking" class="visually-hidden control_input" checked><span class="control_mark"></span> Парковка</label>
+          <label class="control"><input type="checkbox" name="infastructura" id="wi-fi" class="visually-hidden control_input"><span class="control_mark"></span> Wi-Fi</label>
         </div>
       </div>
       <div class="type_hostel_filter">
-        <p>Тип жилья:</p>
+        <p class="name_filter">Тип жилья:</p>
         <div class="type_hostel_checkbox">
-          <label><input type="radio" name="type_hostel" id="hostel" checked> Гостиница</label>
-          <label><input type="radio" name="type_hostel" id="motel"> Мотель</label>
-          <label><input type="radio" name="type_hostel" id="apartament"> Апартаменты</label>
+          <label class="control"><input type="radio" name="type_hostel" id="hostel" class="visually-hidden control_input_round" checked><span class="control_mark_round"></span> Гостиница</label>
+          <label class="control"><input type="radio" name="type_hostel" id="motel" class="visually-hidden control_input_round"><span class="control_mark_round"></span> Мотель</label>
+          <label class="control"><input type="radio" name="type_hostel" id="apartament" class="visually-hidden control_input_round"><span class="control_mark_round"></span> Апартаменты</label>
         </div>
       </div>
       <div class="summa_filter">
-        <p>Стоимость, ₽:</p>
-        <input type="number" name="summa" id="summa_ot" value="0" placeholder="от">
-        <input type="number" name="summa" id="summa_do" value="9000" placeholder="до">
-        <button class="range_min" type="button">
-          <span class="visually-hidden">Изменить минимальную цену</span>
-        </button>
-        <button class="max" type="button">
-          <span class="visually-hidden">Изменить максимальную цену</span>
-        </button>
+        <p class="name_filter">Стоимость, ₽:</p>
+        <div class="summa_filter_span">
+        <label class="summa_ot_label"><input type="number" name="summa" id="summa_ot" class="summa_filter_input summa_ot" value="0" placeholder="от"><span class="summa_ot_span"></span></label><label class="summa_do_label"><input type="number" name="summa" id="summa_do" class="summa_filter_input summa_do" value="9000" placeholder="до"><span class="summa_do_span"></span></label>
+        <div class="range">
+          <div class="range-scale">
+            <div class="range-bar" style="left: 0px; width: 227px">
+            <button class="range-toggle range_min" type="button">
+              <span class="visually-hidden">Изменить минимальную цену</span>
+            </button>
+            <button class="range-toggle range_max" type="button">
+              <span class="visually-hidden">Изменить максимальную цену</span>
+            </button>
+          </div>
+          </div>
+          <div class="range-wrapper-inputs"></div>
+      </div>
+
+
+      </div>
       </div>
       <div class="button_filter">
-        <input type="submit" value="Применить" class="button_submit">
-        <br>
-        <input type="reset" value="Сбросить"class="button_reset">
+        <input type="submit" value="Применить" class="button_submit_filter">
+        <input type="reset" value="Сбросить"class="button_reset_filter">
       </div>
     </form>
   </section>
@@ -88,9 +97,9 @@
     <option value="Сначала дешёвые">Сначала дешёвые</option>
   </select>
   <ul class="hostel_list_view">
-    <li><img src="" alt="1 вид"></li>
-    <li><img src="" alt="2 вид"></li>
-    <li><img src="" alt="3 вид"></li>
+    <li></li>
+    <li class="hostel_list_view_active"></li>
+    <li></li>
   </ul>
 </section>
 <section class="hostel_card">
@@ -107,12 +116,12 @@
   </div>
   <div class="product_card_rating">
   <ul class="product_card_rating_star">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
+    <li class="star_active"></li>
+    <li class="star_active"></li>
+    <li class="star_active"></li>
+    <li class="star_active"></li>
   </ul>
-  <p>Рейтинг: 8,5</p>
+  <button class="card_rating">Рейтинг: 8,5</button>
 </div>
 </div>
 <hr class="product_card_line">
@@ -128,12 +137,12 @@
   </div>
   <div class="product_card_rating">
   <ul class="product_card_rating_star">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
+    <li class="star_active"></li>
+    <li class="star_active"></li>
+    <li class="star_active"></li>
+    <li class="empty"></li>
   </ul>
-  <p>Рейтинг: 8,9</p>
+  <button class="card_rating">Рейтинг: 8,9</button>
 </div>
 </div>
 <hr class="product_card_line">
@@ -149,12 +158,12 @@
   </div>
   <div class="product_card_rating">
   <ul class="product_card_rating_star">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
+    <li class="star_active"></li>
+    <li class="star_active"></li>
+    <li class="empty"></li>
+    <li class="empty"></li>
   </ul>
-  <p>Рейтинг: 9,2</p>
+  <button class="card_rating">Рейтинг: 9,2</button>
 </div>
 </div>
 <hr class="product_card_line">
@@ -170,17 +179,19 @@
   </div>
   <div class="product_card_rating">
   <ul class="product_card_rating_star">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
+    <li class="star_active"></li>
+    <li class="star_active"></li>
+    <li class="empty"></li>
+    <li class="empty"></li>
   </ul>
-  <p>Рейтинг: 9,2</p>
+  <button class="card_rating">Рейтинг: 9,2</button>
 </div>
 </div>
 <hr class="product_card_line">
 <button class="product_card_button_more">Загрузить ещё</button>
+<hr class="product_card_line">
 </section>
+
 
 <section class="pagination">
   <ul class="pagination_list">
@@ -191,7 +202,7 @@
     <li class="pagination_list_item"><a class="pagination_list_item_links" href="#"><span>...</span></a></li>
     <li class="pagination_list_item"><a class="pagination_list_item_links" href="#"><span>10</span></a></li>
   </ul>
-  <label>Гостиниц на странице: <select name="hostel_number_page" id="hostel_number_page"><option>4</option></select></label>
+  <label class="hostel_on_page_label">Гостиниц на странице: <select name="hostel_number_page" id="hostel_number_page" class="hostel_type hostel_on_page"><option>4</option></select></label>
 </section>
   </main>
   <footer>
